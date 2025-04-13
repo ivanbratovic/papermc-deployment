@@ -5,7 +5,7 @@ services:
       args:
         - MINECRAFT_VERSION=${MINECRAFT_VERSION}
     image: mcserver-vanilla:${MINECRAFT_VERSION}
-    container_name: minecraft-server-vanilla
+    container_name: minecraft-papermc-server
     stop_grace_period: 1m
     ports:
       # Player connection port
@@ -24,9 +24,18 @@ services:
       - ./server.properties:/server/server.properties:rw
       # Remove the following bind-mount if you aren't using the whitelist
       - ./whitelist.json:/server/whitelist.json
-      # Store plugins and server config in this directory
-      - ./plugins:/server/plugins
-      - ./config:/server/config
+      # Bind-mount for plugins
+      - type: bind
+        source: ./plugins
+        target: /server/plugins
+        bind:
+          create_host_path: true
+      # Bind-mount for configs
+      - type: bind
+        source: ./config
+        target: /server/config
+        bind:
+          create_host_path: true
 volumes:
   mcworld_data:
   mcworld_nether:
