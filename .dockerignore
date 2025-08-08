@@ -1,0 +1,7 @@
+docker-compose.yml
+*.env
+whitelist.json
+server.properties
+config/
+plugins/
+mcrcon
