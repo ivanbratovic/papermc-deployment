@@ -1,4 +1,4 @@
-FROM openjdk:21-slim-bullseye
+FROM eclipse-temurin:21-noble
 
 ARG PROJECT=paper
 ARG MINECRAFT_VERSION
