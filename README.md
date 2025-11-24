@@ -7,6 +7,10 @@ This repo hosts files to rapidly deploy a Minecraft PaperMC Server using Docker 
 ### Quick start
 
 1. Put the version of Minecraft you want to host inside the `.env` file.
+   If you want to use Minecraft 1.21.10, the file must be set to:
+   ```dotenv
+   MINECRAFT_VERSION=1.21.10
+   ```
 2. Verify the contents of the `server.properties` file. Make sure it works for you.
 3. Create the `plugins` and `config` directories. Make sure they're in the same
     location as the Compose YAML file. You can run:
@@ -41,11 +45,6 @@ Modify the `.env` file to contain the Minecraft version you want to deploy.
 - A stable version of the PaperMC server must be available. The build will fail otherwise.
 - Upgrading to a newer MC version should be fine, but downgrading to an older version should
   not be attempted! It may cause a failure to start due to permanent data loss or corruption. 
-
-If you want to use Minecraft 1.24.1, the file must be set to:
-```dotenv
-MINECRAFT_VERSION=1.21.4
-```
 
 #### New plugins
 
