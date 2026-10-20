@@ -17,8 +17,6 @@ services:
     restart: unless-stopped
     volumes:
       - mcworld_data:/server/world
-      - mcworld_nether:/server/world_nether
-      - mcworld_end:/server/world_the_end
       # Separate volume for Backuper plugin
       - mcworld_backup:/server/backup
       - ./server.properties:/server/server.properties:rw
@@ -38,6 +36,3 @@ services:
           create_host_path: true
 volumes:
   mcworld_data:
-  mcworld_nether:
-  mcworld_end:
-  mcworld_backup:
