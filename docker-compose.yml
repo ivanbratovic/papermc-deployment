@@ -18,6 +18,7 @@ services:
     restart: unless-stopped
     volumes:
       - mcworld_data:/server/world
+      - ./server.properties:/server/server.properties:rw
       # Remove the following bind-mount if you aren't using the whitelist
       - ./whitelist.json:/server/whitelist.json
       # Bind-mount for plugins
