@@ -1,4 +1,4 @@
-# PaperMC deployment
+# PaperMC Docker deployment
 
 This repo hosts files to rapidly deploy a Minecraft PaperMC Server using Docker Compose.
 
