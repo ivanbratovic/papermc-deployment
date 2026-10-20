@@ -1,4 +1,5 @@
-FROM eclipse-temurin:25-noble
+ARG JAVA_VERSION=25
+FROM eclipse-temurin:${JAVA_VERSION}-noble
 
 ARG PROJECT=paper
 ARG MINECRAFT_VERSION

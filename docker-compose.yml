@@ -4,6 +4,7 @@ services:
       context: .
       args:
         - MINECRAFT_VERSION=${MINECRAFT_VERSION}
+        - JAVA_VERSION=${JAVA_VERSION}
     image: mcserver-vanilla:${MINECRAFT_VERSION}
     container_name: minecraft-papermc-server
     stop_grace_period: 1m
