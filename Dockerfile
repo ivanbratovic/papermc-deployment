@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21-noble
+FROM eclipse-temurin:25-noble
 
 ARG PROJECT=paper
 ARG MINECRAFT_VERSION
@@ -13,13 +13,13 @@ WORKDIR /server
 RUN mkdir backup world
 
 # Setup server files
-ADD https://api.papermc.io/v2/projects/${PROJECT}/versions/${MINECRAFT_VERSION}/ available_builds
+ADD https://fill.papermc.io/v3/projects/${PROJECT}/versions/${MINECRAFT_VERSION} available_builds
 COPY download-latest.sh .
 RUN sh ./download-latest.sh $PROJECT $MINECRAFT_VERSION
 RUN echo "eula=true" > eula.txt
 
 # Entrypoint
-CMD ["java", "-Xms5G", "-Xmx10G", "-jar", "server.jar"]
+CMD [ "java", "-Xms5G", "-Xmx10G", "-jar", "server.jar" ]
 
 # Healthcheck
 HEALTHCHECK CMD nc localhost 25565 -w 1
